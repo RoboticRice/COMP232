@@ -1,3 +1,6 @@
+#my ignores...
+.DS_Store
+
 # Prerequisites
 *.d
 
