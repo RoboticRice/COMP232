@@ -1,0 +1,1085 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="c_tut"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="if-then-else">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/if-then-else" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 if-then-else"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="if-then-else/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/if-then-else" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 if-then-else/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ptr-problems">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/ptr-problems" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 ptr-problems"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ptr-problems/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/ptr-problems" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 ptr-problems/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="calc">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/calc" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 calc"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="calc/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/calc" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 calc/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="types">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/types" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 types"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="types/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/types" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 types/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ptr-arg">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/ptr-arg" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 ptr-arg"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ptr-arg/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/ptr-arg" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 ptr-arg/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="struct">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/struct" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 struct"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="struct/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/struct" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 struct/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="type-conv">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/type-conv" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 type-conv"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="type-conv/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/type-conv" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 type-conv/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="strings">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/strings" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 strings"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="strings/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/strings" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 strings/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ptr-func">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/ptr-func" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 ptr-func"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ptr-func/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/ptr-func" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 ptr-func/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="file">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/file" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 file"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="file/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/file" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 file/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ptr-arg-3">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/ptr-arg-3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 ptr-arg-3"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ptr-arg-3/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/ptr-arg-3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 ptr-arg-3/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pointer">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/pointer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 pointer"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pointer/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/pointer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 pointer/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ptr-arg-2">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/ptr-arg-2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 ptr-arg-2"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ptr-arg-2/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/ptr-arg-2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 ptr-arg-2/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="argc-argv">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/argc-argv" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 argc-argv"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="argc-argv/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/argc-argv" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 argc-argv/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="array-ptr">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/array-ptr" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 array-ptr"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="array-ptr/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/array-ptr" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 array-ptr/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="array">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/array" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 array"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="array/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/array" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 array/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mem-alloc">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/mem-alloc" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 mem-alloc"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mem-alloc/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/mem-alloc" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 mem-alloc/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hello">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/hello" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 hello"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hello/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/hello" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 hello/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="functions">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/functions" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 functions"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="functions/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/functions" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 functions/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="words">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/words" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 words"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="words/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/words" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 words/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ref-arg">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/ref-arg" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 ref-arg"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ref-arg/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/ref-arg" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 ref-arg/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="array-arg">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/array-arg" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 array-arg"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="array-arg/fast">
+				<Option output="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/array-arg" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sammuel.rice139/Desktop/comp232/c_tut/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 array-arg/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sammuel.rice139/Desktop/comp232/c_tut/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/argc-argv.c">
+			<Option target="argc-argv"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/array-arg.c">
+			<Option target="array-arg"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/array-ptr.c">
+			<Option target="array-ptr"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/array.c">
+			<Option target="array"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/calc.c">
+			<Option target="calc"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/file.c">
+			<Option target="file"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/functions.c">
+			<Option target="functions"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/hello.c">
+			<Option target="hello"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/if-then-else.c">
+			<Option target="if-then-else"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/mem-alloc.c">
+			<Option target="mem-alloc"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/person.c">
+			<Option target="struct"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/person.h">
+			<Option target="struct"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/pointer.c">
+			<Option target="pointer"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/ptr-arg-2.c">
+			<Option target="ptr-arg-2"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/ptr-arg-3.c">
+			<Option target="ptr-arg-3"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/ptr-arg.c">
+			<Option target="ptr-arg"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/ptr-func.c">
+			<Option target="ptr-func"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/ptr-problems.c">
+			<Option target="ptr-problems"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/ref-arg.c">
+			<Option target="ref-arg"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/strings.c">
+			<Option target="strings"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/struct.c">
+			<Option target="struct"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/type-conv.c">
+			<Option target="type-conv"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/types.c">
+			<Option target="types"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/src/words.c">
+			<Option target="words"/>
+		</Unit>
+		<Unit filename="/Users/sammuel.rice139/Desktop/comp232/c_tut/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

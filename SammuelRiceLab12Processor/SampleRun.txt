@@ -1,0 +1,20 @@
+1 jhadhk
+1 jhjrh
+1 kdfjhskdfjjhs
+2 1 2 3 4 5
+2 22 22 22 33 44
+4 mo me me my mi
+END
+TYPE 1: jhadhk
+TYPE 1: jhjrh
+TYPE 1: kdfjhskdfjjhs
+TYPE 2: 1,2,3,4,5
+TYPE 2: 22,22,22,33,44
+TYPE 4: mo me me my mi
+Number of message batches: 1
+Messages processed:
+Total: 6
+Type 1: 3
+Type 2: 2
+Type 3: 0
+Type 4: 1

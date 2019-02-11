@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="argc-argv" type="CMakeRunConfiguration" factoryName="Application" singleton="true" PROGRAM_PARAMS="arg1 arg2 arg3 arg4 arg5" PASS_PARENT_ENVS_2="true" PROJECT_NAME="c_tut" TARGET_NAME="argc-argv" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="c_tut" RUN_TARGET_NAME="argc-argv">
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>
