@@ -42,6 +42,11 @@ type "integer"|"real"
     return COND;
     }
 
+"lambda" {
+    fprintf(stderr, "lex: LAMBDA\n");
+    return LAMBDA;
+    }
+
 {func} {
     yylval.sval = (char *) malloc(strlen(yytext)*sizeof(char));
     strcpy(yylval.sval, yytext);

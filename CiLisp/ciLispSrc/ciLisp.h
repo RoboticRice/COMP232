@@ -1,7 +1,7 @@
 /*
  * ciLisp Project
  * RoboticRice
- * Task 6
+ * Task 7
  * In-Progress: 05/08/2019
  */
 
@@ -55,20 +55,35 @@ typedef enum {
     NUM_TYPE, //0
     FUNC_TYPE, //1
     SYMBOL_TYPE, //2
-    CONDIT_TYPE //3
+    CONDIT_TYPE, //3
+    CUST_FUNC_TYPE //4
 } AST_NODE_TYPE;
 
-typedef struct symbol_table_node {
-    char *ident;
-    struct ast_node *val;
-    struct symbol_table_node *next;
-} SYMBOL_TABLE_NODE;
+typedef enum {
+    VAR_TYPE, //0
+    LAMBDA_TYPE, //1
+    ARG_TYPE //2
+} SYMBOL_TABLE_TYPE;
 
 typedef enum {
     NAN_TYPE = -1,
     REAL_TYPE,  //0
     INT_TYPE    //1
 }DATA_TYPE;
+
+typedef struct stack_node {
+    struct ast_node *val;
+    struct stack_node *next;
+} STACK_NODE;
+
+typedef struct symbol_table_node {
+    char *ident;
+    SYMBOL_TABLE_TYPE type;
+    DATA_TYPE dtype;
+    struct ast_node *val;
+    struct symbol_table_node *next;
+    STACK_NODE *stack;
+} SYMBOL_TABLE_NODE;
 
 DATA_TYPE resolveType(char *);
 
@@ -112,7 +127,9 @@ typedef struct ast_node {
 
 AST_NODE *number(double value, DATA_TYPE dtype);
 
-AST_NODE *function(char *funcName, AST_NODE *opList);
+AST_NODE *function(char *funcName, AST_NODE *opList, AST_NODE_TYPE type);
+
+AST_NODE *functionWrap(char *funcName, AST_NODE *opList);
 
 AST_NODE *setSymbolTable(SYMBOL_TABLE_NODE *symbolTable, AST_NODE *s_expr);
 
@@ -120,7 +137,13 @@ AST_NODE *setConditions(AST_NODE *condition, AST_NODE *nonZero, AST_NODE *zero);
 
 AST_NODE *symbol(char *name);
 
+STACK_NODE *createStack(AST_NODE *value);
+
 SYMBOL_TABLE_NODE *createSymbol(char *name, AST_NODE *val, DATA_TYPE dtype);
+
+SYMBOL_TABLE_NODE *createArg(char *name, SYMBOL_TABLE_NODE *argList);
+
+SYMBOL_TABLE_NODE *createFunction(DATA_TYPE dtype, char *name, SYMBOL_TABLE_NODE *argList, AST_NODE *func);
 
 SYMBOL_TABLE_NODE *addSymbolToList(SYMBOL_TABLE_NODE *symbolTable, SYMBOL_TABLE_NODE *newSymbol);
 

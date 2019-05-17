@@ -1,7 +1,7 @@
 /*
  * ciLisp Project
  * RoboticRice
- * Task 6
+ * Task 7
  * In-Progress: 05/08/2019
  */
 
@@ -95,7 +95,14 @@ AST_NODE *number(double value, DATA_TYPE dtype) {
 //
 // create a node for a function
 //
-AST_NODE *function(char *funcName, AST_NODE *opList) {
+AST_NODE *function(char *funcName, AST_NODE *opList, AST_NODE_TYPE type) {
+    AST_NODE *p;
+    p = functionWrap(funcName, opList);
+    p->type = type; //this is so I can pass CUST type or FUNC type
+    return p;
+}
+
+AST_NODE *functionWrap(char *funcName, AST_NODE *opList) {
     AST_NODE *p;
     size_t nodeSize;
 
@@ -104,7 +111,7 @@ AST_NODE *function(char *funcName, AST_NODE *opList) {
     if ((p = calloc(1, nodeSize)) == NULL)
         yyerror("out of memory");
 
-    p->type = FUNC_TYPE;
+    //p->type = FUNC_TYPE;
     p->data.function.name = funcName;
     p->data.function.opList = opList;
 
@@ -176,6 +183,18 @@ AST_NODE *symbol(char *name) {
     return p;
 }
 
+STACK_NODE *createStack(AST_NODE *value) {
+    STACK_NODE *stack;
+    size_t nodeSize;
+    nodeSize = sizeof(STACK_NODE);
+    if ((stack = calloc(1, nodeSize)) == NULL)
+        yyerror("out of memory");
+
+    stack->val = value;
+
+    return stack;
+}
+
 SYMBOL_TABLE_NODE *createSymbol(char *name, AST_NODE *val, DATA_TYPE dtype) {
     if (val == NULL) {
         yyerror("Attempted to create a symbol with AST_NODE of NULL.");
@@ -192,6 +211,8 @@ SYMBOL_TABLE_NODE *createSymbol(char *name, AST_NODE *val, DATA_TYPE dtype) {
 
     p->ident = name;
 
+    p->type = VAR_TYPE;
+
     p->val = number(eval(val).val, dtype);
     if ((dtype == INT_TYPE)&&(eval(val).type == REAL_TYPE)) {
         //if type was REAL & new type is INT, trunc the decimals on the stored value
@@ -200,6 +221,51 @@ SYMBOL_TABLE_NODE *createSymbol(char *name, AST_NODE *val, DATA_TYPE dtype) {
     }
 
     freeNode(val); //This frees the whole tree, now that it's not needed
+
+    return p;
+}
+
+SYMBOL_TABLE_NODE *createArg(char *name, SYMBOL_TABLE_NODE *argList) {
+    SYMBOL_TABLE_NODE *p;
+    size_t nodeSize;
+
+    //allocate memory for a SYMBOL_TABLE_NODE
+    nodeSize = sizeof(SYMBOL_TABLE_NODE);
+    if ((p = calloc(1, nodeSize)) == NULL) //malloc(nodeSize)
+        yyerror("out of memory");
+
+    p->ident = name;
+
+    p->type = ARG_TYPE;
+
+    if (argList != NULL)
+        p->next = argList;
+
+    return p;
+}
+
+SYMBOL_TABLE_NODE *createFunction(DATA_TYPE dtype, char *name, SYMBOL_TABLE_NODE *argList, AST_NODE *func) {
+
+    if (func->type != FUNC_TYPE)
+        exit(1099); //MAJOR ERROR! That means user assigned something other than a function to the custom function, and will cause big problems
+
+    SYMBOL_TABLE_NODE *p;
+    size_t nodeSize;
+
+    //allocate memory for a SYMBOL_TABLE_NODE
+    nodeSize = sizeof(SYMBOL_TABLE_NODE);
+    if ((p = calloc(1, nodeSize)) == NULL) //malloc(nodeSize)
+        yyerror("out of memory");
+
+    p->ident = name;
+
+    p->type = LAMBDA_TYPE;
+
+    func->symbolTable = argList;
+
+    p->val = func;
+
+    p->dtype = dtype;
 
     return p;
 }
@@ -274,14 +340,20 @@ void freeNode(AST_NODE *p) {
     switch (p->type)
     {
         case NUM_TYPE:
-            //nothing to free within num union
+            //nothing to free within these
             break;
+        case CUST_FUNC_TYPE:
         case FUNC_TYPE:
             free(p->data.function.name);
             freeNode(p->data.function.opList);
             break;
         case SYMBOL_TYPE:
             free(p->data.symbol.name);
+            break;
+        case CONDIT_TYPE:
+            freeNode(p->data.condition.cond);
+            freeNode(p->data.condition.nonzero);
+            freeNode(p->data.condition.zero);
             break;
     }
 
@@ -313,18 +385,53 @@ RETURN_VALUE eval(AST_NODE *p) {
         case SYMBOL_TYPE:
         {
             SYMBOL_TABLE_NODE *symbol;
-            symbol = resolveSymbol(p->data.symbol.name,p);
-            if (symbol != NULL)
-                return eval(symbol->val); //if symbol is not def, throw error
-            yyerror("Attempted to get the value of a symbol that has not yet been declared!");
+            symbol = resolveSymbol(p->data.symbol.name, p);
+            if (symbol != NULL) {
+                switch (symbol->type) {
+                    case ARG_TYPE:
+                        retVal = eval(symbol->stack->val);
+                        break;
+                    case LAMBDA_TYPE:
+                        //return retVal; ///Should never happen, a lambda returns a FUNCTION not a value
+                        break;
+                    case VAR_TYPE:
+                        retVal = eval(symbol->val);
+                        break;
+                }
+            } else
+                yyerror("Attempted to get the value of a symbol that has not yet been declared!");
         }
+        break;
         case NUM_TYPE:
-            return p->data.number.retVal;
+            retVal = p->data.number.retVal;
+            break;
         case CONDIT_TYPE:
             if (eval(p->data.condition.cond).val != 0) //AKA: If condition is NOT false
-                return eval(p->data.condition.nonzero);
+                retVal = eval(p->data.condition.nonzero);
             else
-                return eval(p->data.condition.zero);
+                retVal = eval(p->data.condition.zero);
+            break;
+        case CUST_FUNC_TYPE:
+        {
+            AST_NODE *destFunc = resolveSymbol(p->data.function.name, p)->val;
+            SYMBOL_TABLE_NODE *symbol = destFunc->symbolTable;
+            AST_NODE *scanner = p->data.function.opList;
+            STACK_NODE *stack;
+
+            while (symbol != NULL)
+            {
+                stack = createStack(scanner);
+                stack->next = symbol->stack;
+                symbol->stack = stack;
+
+                if (scanner != NULL)
+                    scanner = scanner->next; //goes through the oplist
+                symbol = symbol->next; //while going through the symbolTable
+            }
+            retVal = eval(destFunc);
+            //TODO: POP-OFF stack
+        }
+        break;
         case FUNC_TYPE:
             if (p->data.function.opList != NULL)
             {
@@ -364,6 +471,9 @@ RETURN_VALUE eval(AST_NODE *p) {
                             op2Val = eval(p->data.function.opList->next);
                         else
                             yyerror("1 parameter provided, not enough to complete function!");
+                        break;
+                    default:
+                        ///All other cases are not handled here
                         break;
                 }
                 /*

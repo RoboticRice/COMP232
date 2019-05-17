@@ -11,10 +11,10 @@
 
 %token <sval> FUNC SYMBOL TYPE
 %token <dval> REAL_NUMBER INT_NUMBER
-%token LPAREN RPAREN EOL QUIT LET COND
+%token LPAREN RPAREN EOL QUIT LET COND LAMBDA
 
 %type <astNode> s_expr f_expr s_expr_list
-%type <symbolNode> let_elem let_section let_list
+%type <symbolNode> let_elem let_section let_list arg_list
 
 %%
 
@@ -46,7 +46,7 @@ s_expr:
 		$$ = setSymbolTable($2, $3);
 	}
 	| LPAREN COND s_expr s_expr s_expr RPAREN {
-	    $$ = setConditions($3, $4, $5);
+		$$ = setConditions($3, $4, $5);
 	}
 	| QUIT {
 		fprintf(stderr, "yacc: s_expr ::= QUIT\n");
@@ -61,20 +61,24 @@ s_expr:
 f_expr:
 	LPAREN FUNC s_expr_list RPAREN {
 		fprintf(stderr, "yacc: s_expr ::= LPAREN FUNC expr RPAREN\n");
-		$$ = function($2, $3);
+		$$ = function($2, $3, FUNC_TYPE);
+	}
+	| LPAREN SYMBOL s_expr_list RPAREN {
+		fprintf(stderr, "yacc: s_expr ::= LPAREN SYMBOL expr RPAREN\n");
+		$$ = function($2, $3, CUST_FUNC_TYPE);
 	}
 
 s_expr_list:
-    s_expr s_expr_list {
-        $1->next = $2;
-        $$ = $1;
-    }
-    | s_expr {
-        $$ = $1;
-    }
-    | {
-        $$ = NULL;
-    };
+	s_expr s_expr_list {
+		$1->next = $2;
+		$$ = $1;
+	}
+	| s_expr {
+		$$ = $1;
+	}
+	| {
+		$$ = NULL;
+	};
 
 let_section:
 	LPAREN let_list RPAREN {
@@ -95,9 +99,23 @@ let_list:
 let_elem:
 	LPAREN TYPE SYMBOL s_expr RPAREN {
     		$$ = createSymbol($3, $4, resolveType($2));
-    }
-    | LPAREN SYMBOL s_expr RPAREN {
+	}
+	| LPAREN SYMBOL s_expr RPAREN {
 		$$ = createSymbol($2, $3, resolveType("NULL"));
-	};
+	}
+	| LPAREN TYPE SYMBOL LAMBDA LPAREN arg_list RPAREN s_expr RPAREN {
+		$$ = createFunction(resolveType($2), $3, $6, $8); //(Type, Symbol, arg_list, s_expr)
+	}
+	| LPAREN SYMBOL LAMBDA LPAREN arg_list RPAREN s_expr RPAREN {
+        	$$ = createFunction(resolveType("NULL"), $2, $5, $7);
+        };
+
+arg_list:
+	SYMBOL arg_list {
+		$$ = createArg($1, $2);
+	}
+	| SYMBOL {
+		$$ = createArg($1, NULL);
+	}
 %%
 
