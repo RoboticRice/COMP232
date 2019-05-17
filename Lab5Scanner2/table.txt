@@ -1,0 +1,15 @@
+13 13
+;,(,),+,-,*,/,%,0123456789,abcdefghijklmnopqrstuvwxyz,=, \t\n,.
+6 7 8 9 A B C 1 2 4 5 0 e e 0
+a a a a a a a a a a a a a a B
+a a a a a a a a 2 a a a 3 a 1
+a a a a a a a a 3 a a a a a 1
+a a a a a a a a 4 4 a a a a 2
+a a a a a a a a a a a a a a 3
+a a a a a a a a a a a a a a 4
+a a a a a a a a a a a a a a 5
+a a a a a a a a a a a a a a 6
+a a a a a a a a a a a a a a 7
+a a a a a a a a a a a a a a 8
+a a a a a a a a a a a a a a 9
+a a a a a a a a a a a a a a A
