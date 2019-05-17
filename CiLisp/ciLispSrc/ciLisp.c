@@ -1,8 +1,8 @@
 /*
  * ciLisp Project
  * RoboticRice
- * Task 2
- * In-Progress: 05/01/2019
+ * Task 3
+ * In-Progress: 05/06/2019
  */
 
 #include "ciLisp.h"
@@ -30,9 +30,9 @@ char *func[] = {"neg",
                 "pow",
                 "max",
                 "min",
-//                "exp2",
-//                "cbrt",
-//                "hypot",
+                "exp2",
+                "cbrt",
+                "hypot",
 //                "print",
 //        //TODO TASK 6:
 //                "rand", //generate a random double, by any means
@@ -54,10 +54,27 @@ OPER_TYPE resolveFunc(char *funcName) {
     return CUSTOM_FUNC;
 }
 
+char *type[] = {"real",
+                "integer",
+                ""};
+
+DATA_TYPE resolveType(char *typeName)
+{
+    int i = 0;
+    while (type[i][0] != '\0')
+    {
+        if (strcmp(type[i], typeName) == 0)
+            return i;
+
+        i++;
+    }
+    return REAL_TYPE; //default type is REAL
+}
+
 //
 // create a node for a number
 //
-AST_NODE *number(double value) {
+AST_NODE *number(double value, DATA_TYPE dtype) {
     AST_NODE *p;
     size_t nodeSize;
 
@@ -67,7 +84,9 @@ AST_NODE *number(double value) {
         yyerror("out of memory");
 
     p->type = NUM_TYPE;
-    p->data.number.value = value;
+    p->data.number.retVal.val = value;
+    p->data.number.retVal.type = dtype;
+
 
     return p;
 }
@@ -139,7 +158,7 @@ AST_NODE *symbol(char *name) {
     return p;
 }
 
-SYMBOL_TABLE_NODE *createSymbol(char *name, AST_NODE *val) { //TODO later task// DATA_TYPE dtype) {
+SYMBOL_TABLE_NODE *createSymbol(char *name, AST_NODE *val, DATA_TYPE dtype) {
     if (val == NULL) {
         yyerror("Attempted to create a symbol with AST_NODE of NULL.");
         return NULL;
@@ -155,10 +174,12 @@ SYMBOL_TABLE_NODE *createSymbol(char *name, AST_NODE *val) { //TODO later task//
 
     p->ident = name;
 
-    //p->val = number(eval(val)); //TODO where/when do we eval this?
-    p->val = val;
-
-    //free(val); //TODO val might have sub items, do we need to free those too?
+    p->val = number(eval(val).val, dtype);
+    if ((dtype == INT_TYPE)&&(eval(val).type == REAL_TYPE)) {
+        //if type was REAL & new type is INT, trunc the decimals on the stored value
+        p->val->data.number.retVal.val = trunc(p->val->data.number.retVal.val);
+        fprintf(stderr, "WARNING: precision loss in the assignment for variable %s\n", name);
+    }
 
     return p;
 }
@@ -250,11 +271,21 @@ void freeNode(AST_NODE *p) {
 //
 // p points to the root
 //
-double eval(AST_NODE *p) {
-    if (!p)
-        return NAN;
+RETURN_VALUE eval(AST_NODE *p) {
 
-    double retVal = NAN;
+    RETURN_VALUE retVal;
+    retVal.type = NAN_TYPE;
+    retVal.val = NAN;
+    //double retVal = NAN;
+
+    if (!p)
+        return retVal;
+
+    RETURN_VALUE op2Val;
+    op2Val.val = NAN;
+    op2Val.type = NAN_TYPE;
+
+    //+5points extra credit for implementing: square root, take second input as input, make a tailor series approximation up to that degree
 
     switch (p->type) {
         case SYMBOL_TYPE:
@@ -266,65 +297,84 @@ double eval(AST_NODE *p) {
             yyerror("Attempted to get the value of a symbol that has not yet been declared!");
         }
         case NUM_TYPE:
-            return p->data.number.value;
+            return p->data.number.retVal;
         case FUNC_TYPE:
             //TODO TASK 6: Check if at least one param is passed
+            retVal = eval(p->data.function.op1);
+            if (p->data.function.op2 != NULL) //This will be changed once we implement oplist
+                op2Val = eval(p->data.function.op2);
             switch (resolveFunc(p->data.function.name)) {
                 case NEG_OPER:
-                    retVal = -1 * eval(p->data.function.op1);
+                    retVal.val *= -1;
                     break;
                 case ABS_OPER:
-                    retVal = fabs(eval(p->data.function.op1));
+                    retVal.val = fabs(retVal.val);
                     break;
                 case EXP_OPER:
-                    retVal = exp(eval(p->data.function.op1));
+                    retVal.val = exp(retVal.val);
+                    retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
                     break;
                 case SQRT_OPER:
-                    retVal = sqrt(eval(p->data.function.op1));
+                    retVal.val = sqrt(retVal.val);
+                    retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
                     break;
                 case ADD_OPER:
-                    retVal = eval(p->data.function.op1);
-                    retVal += eval(p->data.function.op2);
+                    retVal.val += op2Val.val;
                     break;
                 case SUB_OPER:
-                    retVal = eval(p->data.function.op1);
-                    retVal -= eval(p->data.function.op2);
+                    retVal.val -= op2Val.val;
                     break;
                 case MULT_OPER:
-                    retVal = eval(p->data.function.op1);
-                    retVal *= eval(p->data.function.op2);
+                    retVal.val *= op2Val.val;
                     break;
                 case DIV_OPER:
-                    retVal = eval(p->data.function.op2);
-                    if (retVal == 0)
+                    if (op2Val.val == 0)
                         break; //returns NAN
-                    retVal = eval(p->data.function.op1) / eval(p->data.function.op2);
+                    retVal.val = retVal.val / op2Val.val;
                     break;
                 case REMAINDER_OPER:
-                    retVal = remainder(eval(p->data.function.op1), eval(p->data.function.op2));
+                    retVal.val = remainder(retVal.val, op2Val.val);
                     break;
                 case LOG_OPER:
                     ///DESIGN CHOICE: Only accept one varriable for log, and do the std log func
-                    retVal = log(eval(p->data.function.op1));
+                    retVal.val = log(retVal.val);
+                    retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
                     break;
                 case POW_OPER:
-                    retVal = pow(eval(p->data.function.op1), eval(p->data.function.op2));
+                    retVal.val = pow(retVal.val, op2Val.val);
+                    retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
                     break;
                 case MAX_OPER:
-                    retVal = fmax(eval(p->data.function.op1), eval(p->data.function.op2));
+                    retVal.val = fmax(retVal.val, op2Val.val);
                     break;
                 case MIN_OPER:
-                    retVal = fmin(eval(p->data.function.op1), eval(p->data.function.op2));
+                    retVal.val = fmin(retVal.val, op2Val.val);
                     break;
-                    //TODO TASK 4?
-//                case EXP2_OPER:
-//                case CBRT_OPER:
-//                case HYPOT_OPER:
+                case EXP2_OPER:
+                    retVal.val = exp2(retVal.val);
+                    retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
+                    break;
+                case CBRT_OPER:
+                    retVal.val = cbrt(retVal.val);
+                    retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
+                    break;
+                case HYPOT_OPER:
+                    retVal.val = hypot(retVal.val, op2Val.val);
+                    retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
+                    break;
 //                case PRINT_OPER:
                 default: //CUSTOM_FUNC - not used?
                     break;
             }
     }
+
+    if (retVal.val == NAN) //this may happen as a result of a built-in function, so just double checking that the correct TYPE is assigned
+        retVal.type = NAN_TYPE;
+
+    if (retVal.type == INT_TYPE) //AKA, if retVal is not a REAL or NAN,
+        if (op2Val.type == REAL_TYPE) //and if any other parameter passed IS a REAL
+            retVal.type = REAL_TYPE; //then make the retVal a REAL.
+            //else, return the type retVal already had
 
     return retVal;
 }  

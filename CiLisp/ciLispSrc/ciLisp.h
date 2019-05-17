@@ -1,8 +1,8 @@
 /*
  * ciLisp Project
  * RoboticRice
- * Task 2
- * In-Progress: 05/01/2019
+ * Task 3
+ * In-Progress: 05/06/2019
  */
 
 #ifndef __cilisp_h_
@@ -37,9 +37,9 @@ typedef enum oper { // must be in sync with funcs in resolveFunc()
     POW_OPER, // 10
     MAX_OPER, // 11
     MIN_OPER, // 12
-//    EXP2_OPER, // 13
-//    CBRT_OPER, // 14
-//    HYPOT_OPER, // 15
+    EXP2_OPER, // 13
+    CBRT_OPER, // 14
+    HYPOT_OPER, // 15
 //    PRINT_OPER, //16
 //    //TODO TASK 6:
 //    RAND_OPER, //17
@@ -53,9 +53,9 @@ typedef enum oper { // must be in sync with funcs in resolveFunc()
 OPER_TYPE resolveFunc(char *);
 
 typedef enum {
-    NUM_TYPE,
-    FUNC_TYPE,
-    SYMBOL_TYPE
+    NUM_TYPE, //0
+    FUNC_TYPE, //1
+    SYMBOL_TYPE //2
 } AST_NODE_TYPE;
 
 typedef struct symbol_table_node {
@@ -64,8 +64,22 @@ typedef struct symbol_table_node {
     struct symbol_table_node *next;
 } SYMBOL_TABLE_NODE;
 
+typedef enum {
+    NAN_TYPE = -1,
+    REAL_TYPE,  //0
+    INT_TYPE    //1
+}DATA_TYPE;
+
+DATA_TYPE resolveType(char *);
+
 typedef struct {
-    double value;
+    DATA_TYPE type;
+    double val;
+}RETURN_VALUE;
+
+typedef struct {
+    //double value; //removed for part 3
+    RETURN_VALUE retVal;
 } NUMBER_AST_NODE;
 
 typedef struct {
@@ -89,7 +103,7 @@ typedef struct ast_node {
     } data;
 } AST_NODE;
 
-AST_NODE *number(double value);
+AST_NODE *number(double value, DATA_TYPE dtype);
 
 AST_NODE *function(char *funcName, AST_NODE *op1, AST_NODE *op2);
 
@@ -97,7 +111,7 @@ AST_NODE *setSymbolTable(SYMBOL_TABLE_NODE *symbolTable, AST_NODE *s_expr);
 
 AST_NODE *symbol(char *name);
 
-SYMBOL_TABLE_NODE *createSymbol(char *name, AST_NODE *val); //TODO later task// DATA_TYPE dtype);
+SYMBOL_TABLE_NODE *createSymbol(char *name, AST_NODE *val, DATA_TYPE dtype);
 
 SYMBOL_TABLE_NODE *addSymbolToList(SYMBOL_TABLE_NODE *symbolTable, SYMBOL_TABLE_NODE *newSymbol);
 
@@ -107,6 +121,6 @@ SYMBOL_TABLE_NODE *resolveSymbol(char *name, AST_NODE *node);
 
 void freeNode(AST_NODE *p);
 
-double eval(AST_NODE *ast);
+RETURN_VALUE eval(AST_NODE *ast);
 
 #endif
