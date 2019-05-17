@@ -1,7 +1,7 @@
 /*
  * ciLisp Project
  * RoboticRice
- * Task 4
+ * Task 5
  * In-Progress: 05/06/2019
  */
 
@@ -94,7 +94,7 @@ AST_NODE *number(double value, DATA_TYPE dtype) {
 //
 // create a node for a function
 //
-AST_NODE *function(char *funcName, AST_NODE *op1, AST_NODE *op2) {
+AST_NODE *function(char *funcName, AST_NODE *opList) {
     AST_NODE *p;
     size_t nodeSize;
 
@@ -105,18 +105,14 @@ AST_NODE *function(char *funcName, AST_NODE *op1, AST_NODE *op2) {
 
     p->type = FUNC_TYPE;
     p->data.function.name = funcName;
-    p->data.function.op1 = op1;
-    p->data.function.op2 = op2;
+    p->data.function.opList = opList;
 
-    if (op1 != NULL) {
-        p->data.function.op1->parent = p;
-        //p->data.function.op1->symbolTable = p->symbolTable;
-    }
+    AST_NODE *scanner = p->data.function.opList;
 
-    if (op2 != NULL) {
-        p->data.function.op2->parent = p;
-        //p->data.function.op2->symbolTable = p->symbolTable;
-    }
+    while (scanner != NULL) {
+        scanner->parent = p;
+        scanner = scanner->next;
+    } //This should set all nodes in opList to have their parent -> p
 
     return p;
 }
@@ -180,6 +176,8 @@ SYMBOL_TABLE_NODE *createSymbol(char *name, AST_NODE *val, DATA_TYPE dtype) {
         p->val->data.number.retVal.val = trunc(p->val->data.number.retVal.val);
         fprintf(stderr, "WARNING: precision loss in the assignment for variable %s\n", name);
     }
+
+    //TODO: Now that I've eval'd the tree with root *val, I should free this tree, right?
 
     return p;
 }
@@ -248,6 +246,9 @@ void freeNode(AST_NODE *p) {
     if (!p)
         return;
 
+    if (p->next != NULL)
+        freeNode(p->next); ///This removes all nodes in opLists
+
     switch (p->type)
     {
         case NUM_TYPE:
@@ -255,8 +256,7 @@ void freeNode(AST_NODE *p) {
             break;
         case FUNC_TYPE:
             free(p->data.function.name);
-            freeNode(p->data.function.op1);
-            freeNode(p->data.function.op2);
+            freeNode(p->data.function.opList);
             break;
         case SYMBOL_TYPE:
             free(p->data.symbol.name);
@@ -299,83 +299,165 @@ RETURN_VALUE eval(AST_NODE *p) {
         case NUM_TYPE:
             return p->data.number.retVal;
         case FUNC_TYPE:
-            //TODO TASK 6: Check if at least one param is passed
-            retVal = eval(p->data.function.op1);
-            if (p->data.function.op2 != NULL) //This will be changed once we implement oplist
-                op2Val = eval(p->data.function.op2);
-            switch (resolveFunc(p->data.function.name)) {
-                case NEG_OPER:
-                    retVal.val *= -1;
-                    break;
-                case ABS_OPER:
-                    retVal.val = fabs(retVal.val);
-                    break;
-                case EXP_OPER:
-                    retVal.val = exp(retVal.val);
-                    retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
-                    break;
-                case SQRT_OPER:
-                    retVal.val = sqrt(retVal.val);
-                    retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
-                    break;
-                case ADD_OPER:
-                    retVal.val += op2Val.val;
-                    break;
-                case SUB_OPER:
-                    retVal.val -= op2Val.val;
-                    break;
-                case MULT_OPER:
-                    retVal.val *= op2Val.val;
-                    break;
-                case DIV_OPER:
-                    if (op2Val.val == 0) {
-                        retVal.type = NAN_TYPE;
-                        retVal.val = NAN;
-                        break; //returns NAN
+            if (p->data.function.opList != NULL)
+            {
+                retVal = eval(p->data.function.opList);
+
+                //resolve func is not that resource intensive, so I'm calling it multiple times to save typing and keep readability
+                switch (resolveFunc(p->data.function.name)) {
+                    case NEG_OPER:
+                    case ABS_OPER:
+                    case EXP_OPER:
+                    case SQRT_OPER:
+                    case LOG_OPER:
+                    case EXP2_OPER:
+                    case CBRT_OPER:
+                        //all these REQUIRE ONLY 1 parameter!
+                        if (p->data.function.opList->next != NULL)
+                            yyerror("More parameters passed than required, ignoring extra parameters!");
+                        break;
+                    case SUB_OPER:
+                    case DIV_OPER:
+                    case REMAINDER_OPER:
+                    case POW_OPER:
+                    case MAX_OPER:
+                    case MIN_OPER:
+                    case HYPOT_OPER:
+                        //all these REQUIRE EXACTLY 2 parameters!
+                        if (p->data.function.opList->next != NULL)
+                            if (p->data.function.opList->next->next != NULL)
+                                yyerror("More parameters passed than required, ignoring extra parameters!");
+                    case ADD_OPER:
+                    case MULT_OPER:
+                    case PRINT_OPER:
+                        //all these require 2 OR MORE parameters
+                        if (p->data.function.opList->next != NULL)
+                            op2Val = eval(p->data.function.opList->next);
+                        else
+                            yyerror("1 parameter provided, not enough to complete function!");
+                        break;
+                }
+                /*
+                 * No need to do anything other than print errors, since if we don't eval the next parameter
+                 * then the default value will be NAN, and any function that accepts NAN as a parameter will
+                 * automatically return NAN.
+                 */
+
+                switch (resolveFunc(p->data.function.name)) {
+                    case NEG_OPER:
+                        retVal.val *= -1;
+                        break;
+                    case ABS_OPER:
+                        retVal.val = fabs(retVal.val);
+                        break;
+                    case EXP_OPER:
+                        retVal.val = exp(retVal.val);
+                        retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
+                        break;
+                    case SQRT_OPER:
+                        retVal.val = sqrt(retVal.val);
+                        retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
+                        break;
+                    case ADD_OPER:
+                    {
+                        retVal.val += op2Val.val;
+                        AST_NODE *scanner = p->data.function.opList->next->next;
+                        while (scanner != NULL)
+                        {
+                            retVal.val += eval(scanner).val;
+                            if (eval(scanner).type == REAL_TYPE)
+                                retVal.type = REAL_TYPE;
+                            else if (eval(scanner).type == NAN_TYPE) {
+                                retVal.val = NAN;
+                                break;
+                            }
+                            scanner = scanner->next;
+                        }
+                        break;
                     }
-                    retVal.val = retVal.val / op2Val.val;
-                    break;
-                case REMAINDER_OPER:
-                    retVal.val = remainder(retVal.val, op2Val.val);
-                    break;
-                case LOG_OPER:
-                    ///DESIGN CHOICE: Only accept one varriable for log, and do the std log func
-                    retVal.val = log(retVal.val);
-                    retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
-                    break;
-                case POW_OPER:
-                    retVal.val = pow(retVal.val, op2Val.val);
-                    retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
-                    break;
-                case MAX_OPER:
-                    retVal.val = fmax(retVal.val, op2Val.val);
-                    break;
-                case MIN_OPER:
-                    retVal.val = fmin(retVal.val, op2Val.val);
-                    break;
-                case EXP2_OPER:
-                    retVal.val = exp2(retVal.val);
-                    retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
-                    break;
-                case CBRT_OPER:
-                    retVal.val = cbrt(retVal.val);
-                    retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
-                    break;
-                case HYPOT_OPER:
-                    retVal.val = hypot(retVal.val, op2Val.val);
-                    retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
-                    break;
-                case PRINT_OPER:
-                    if (retVal.type == REAL_TYPE)
-                        printf("=> %.2lf\n", retVal.val); //if type is REAL, then print number with 2 decimal precision
-                    else
-                        printf("=> %.0lf\n", retVal.val); //else, print number without decimal (if NAN, it will print nan just fine)
-                    break;
-                default: //CUSTOM_FUNC - not used?
-                    break;
-            }
-    }
-    
+                    case SUB_OPER:
+                        retVal.val -= op2Val.val;
+                        break;
+                    case MULT_OPER:
+                    {
+                        retVal.val *= op2Val.val;
+                        AST_NODE *scanner = p->data.function.opList->next->next;
+                        while (scanner != NULL) {
+                            retVal.val *= eval(scanner).val;
+                            if (eval(scanner).type == REAL_TYPE)
+                                retVal.type = REAL_TYPE;
+                            else if (eval(scanner).type == NAN_TYPE) {
+                                retVal.val = NAN;
+                                break;
+                            }
+                            scanner = scanner->next;
+                        }
+                        break;
+                    }
+                    case DIV_OPER:
+                        if (op2Val.val == 0) {
+                            //retVal.type = NAN_TYPE; //done at end of eval func anyways
+                            retVal.val = NAN;
+                            break; //returns NAN
+                        }
+                        retVal.val = retVal.val / op2Val.val;
+                        break;
+                    case REMAINDER_OPER:
+                        retVal.val = remainder(retVal.val, op2Val.val);
+                        break;
+                    case LOG_OPER:
+                        ///DESIGN CHOICE: Only accept one varriable for log, and do the std log func
+                        retVal.val = log(retVal.val);
+                        retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
+                        break;
+                    case POW_OPER:
+                        retVal.val = pow(retVal.val, op2Val.val);
+                        retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
+                        break;
+                    case MAX_OPER:
+                        retVal.val = fmax(retVal.val, op2Val.val);
+                        break;
+                    case MIN_OPER:
+                        retVal.val = fmin(retVal.val, op2Val.val);
+                        break;
+                    case EXP2_OPER:
+                        retVal.val = exp2(retVal.val);
+                        retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
+                        break;
+                    case CBRT_OPER:
+                        retVal.val = cbrt(retVal.val);
+                        retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
+                        break;
+                    case HYPOT_OPER:
+                        retVal.val = hypot(retVal.val, op2Val.val);
+                        retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
+                        break;
+                    case PRINT_OPER:
+                    {
+                        if (retVal.type == REAL_TYPE)
+                            printf("=> %.2lf", retVal.val); //if type is REAL, then print number with 2 decimal precision
+                        else
+                            printf("=> %.0lf", retVal.val); //else, print number without decimal (if NAN, it will print nan just fine)
+                        AST_NODE *scanner = p->data.function.opList->next;
+                        while (scanner != NULL)
+                        {
+                            if (scanner->data.number.retVal.type == REAL_TYPE)
+                                printf(" %.2lf", eval(scanner).val);
+                            else
+                                printf(" %.0lf", eval(scanner).val);
+                            scanner = scanner->next;
+                        }
+                        printf("\n");
+                        break;
+                    }
+                    default: //CUSTOM_FUNC - not used?
+                        break;
+                } //end switch (function.name)
+            } //end if (opList != NULL)
+            else
+                yyerror("0 parameters provided, not enough to complete function!"); //the function will then return NAN
+    } //end switch (p->type)
+
     if (retVal.val == NAN) //this may happen as a result of a built-in function, so just double checking that the correct TYPE is assigned
         retVal.type = NAN_TYPE;
 

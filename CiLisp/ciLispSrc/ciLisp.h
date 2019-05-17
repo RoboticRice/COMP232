@@ -1,7 +1,7 @@
 /*
  * ciLisp Project
  * RoboticRice
- * Task 4
+ * Task 5
  * In-Progress: 05/06/2019
  */
 
@@ -84,8 +84,7 @@ typedef struct {
 
 typedef struct {
     char *name;
-    struct ast_node *op1;
-    struct ast_node *op2;
+    struct ast_node *opList;
 } FUNCTION_AST_NODE;
 
 typedef struct symbol_ast_node {
@@ -101,11 +100,12 @@ typedef struct ast_node {
         FUNCTION_AST_NODE function;
         SYMBOL_AST_NODE symbol;
     } data;
+    struct ast_node *next; //used for the linked list of parameters passed
 } AST_NODE;
 
 AST_NODE *number(double value, DATA_TYPE dtype);
 
-AST_NODE *function(char *funcName, AST_NODE *op1, AST_NODE *op2);
+AST_NODE *function(char *funcName, AST_NODE *opList);
 
 AST_NODE *setSymbolTable(SYMBOL_TABLE_NODE *symbolTable, AST_NODE *s_expr);
 

@@ -13,7 +13,7 @@
 %token <dval> REAL_NUMBER INT_NUMBER
 %token LPAREN RPAREN EOL QUIT LET
 
-%type <astNode> s_expr f_expr
+%type <astNode> s_expr f_expr s_expr_list
 %type <symbolNode> let_elem let_section let_list
 
 %%
@@ -56,14 +56,22 @@ s_expr:
 	};
 
 f_expr:
-	LPAREN FUNC s_expr RPAREN {
+	LPAREN FUNC s_expr_list RPAREN {
 		fprintf(stderr, "yacc: s_expr ::= LPAREN FUNC expr RPAREN\n");
-		$$ = function($2, $3, 0);
+		$$ = function($2, $3);
 	}
-	| LPAREN FUNC s_expr s_expr RPAREN {
-		fprintf(stderr, "yacc: s_expr ::= LPAREN FUNC expr expr RPAREN\n");
-		$$ = function($2, $3, $4);
-	};
+
+s_expr_list:
+    s_expr s_expr_list {
+        $1->next = $2;
+        $$ = $1;
+    }
+    | s_expr {
+        $$ = $1;
+    }
+    | {
+        $$ = NULL;
+    };
 
 let_section:
 	LPAREN let_list RPAREN {
