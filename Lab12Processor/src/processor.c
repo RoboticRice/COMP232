@@ -1,5 +1,5 @@
 /**
- * Name: Sammuel Rice
+ * Name: RoboticRice
  * Lab: 1 2 Processor
  * Date: 02/06/2019
  * This header is only located in this file,

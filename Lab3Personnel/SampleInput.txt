@@ -1,0 +1,245 @@
+/Users/***/Desktop/lab3_personnel/cmake-build-debug/personnel
+Enter the initial number of records:
+7
+Zach 22 5.8 2/20/1989
+Maya 21 5.9 8/2/1990
+Ange 23 5.6 7/3/1987
+Greg 22 6.2 4/15/1989
+Matt 24 6.5 6/5/1986
+Bob 50 8 3/23/1900
+Frank 100 9 5/4/1923New Record:
+Name:
+Age:
+Height:
+Birthday in MM/DD/YYYY:
+
+New Record:
+Name:
+Age:
+Height:
+Birthday in MM/DD/YYYY:
+
+New Record:
+Name:
+Age:
+Height:
+Birthday in MM/DD/YYYY:
+
+New Record:
+Name:
+Age:
+Height:
+Birthday in MM/DD/YYYY:
+
+New Record:
+Name:
+Age:
+Height:
+Birthday in MM/DD/YYYY:
+
+New Record:
+Name:
+Age:
+Height:
+Birthday in MM/DD/YYYY:
+
+New Record:
+Name:
+
+Age:
+Height:
+Birthday in MM/DD/YYYY:
+
+Name: Zach
+Age: 22
+Height: 5.800000
+Birthday: 2/20/1989
+
+Name: Maya
+Age: 21
+Height: 5.900000
+Birthday: 8/2/1990
+
+Name: Ange
+Age: 23
+Height: 5.600000
+Birthday: 7/3/1987
+
+Name: Greg
+Age: 22
+Height: 6.200000
+Birthday: 4/15/1989
+
+Name: Matt
+Age: 24
+Height: 6.500000
+Birthday: 6/5/1986
+
+Name: Bob
+Age: 50
+Height: 8.000000
+Birthday: 3/23/1900
+
+Name: Frank
+Age: 100
+Height: 9.000000
+Birthday: 5/4/1923
+
+
+--> Searching database for Maya
+Name: Maya
+Age: 21
+Height: 5.900000
+Birthday: 8/2/1990
+
+
+--> Removing Maya from database
+Name: Zach
+Age: 22
+Height: 5.800000
+Birthday: 2/20/1989
+
+Name: Ange
+Age: 23
+Height: 5.600000
+Birthday: 7/3/1987
+
+Name: Greg
+Age: 22
+Height: 6.200000
+Birthday: 4/15/1989
+
+Name: Matt
+Age: 24
+Height: 6.500000
+Birthday: 6/5/1986
+
+Name: Bob
+Age: 50
+Height: 8.000000
+Birthday: 3/23/1900
+
+Name: Frank
+Age: 100
+Height: 9.000000
+Birthday: 5/4/1923
+
+
+--> Searching database for Frank
+Name: Frank
+Age: 100
+Height: 9.000000
+Birthday: 5/4/1923
+
+
+--> Removing Frank from database
+Name: Zach
+Age: 22
+Height: 5.800000
+Birthday: 2/20/1989
+
+Name: Ange
+Age: 23
+Height: 5.600000
+Birthday: 7/3/1987
+
+Name: Greg
+Age: 22
+Height: 6.200000
+Birthday: 4/15/1989
+
+Name: Matt
+Age: 24
+Height: 6.500000
+Birthday: 6/5/1986
+
+Name: Bob
+Age: 50
+Height: 8.000000
+Birthday: 3/23/1900
+
+
+--> Removing Miro from database
+Name: Zach
+Age: 22
+Height: 5.800000
+Birthday: 2/20/1989
+
+Name: Ange
+Age: 23
+Height: 5.600000
+Birthday: 7/3/1987
+
+Name: Greg
+Age: 22
+Height: 6.200000
+Birthday: 4/15/1989
+
+Name: Matt
+Age: 24
+Height: 6.500000
+Birthday: 6/5/1986
+
+Name: Bob
+Age: 50
+Height: 8.000000
+Birthday: 3/23/1900
+
+
+--> Adding new record to database
+New Record:
+Name:
+AJ 99 88 1/1/1919
+Age:
+Height:
+Birthday in MM/DD/YYYY:
+
+Name: Zach
+Age: 22
+Height: 5.800000
+Birthday: 2/20/1989
+
+Name: Ange
+Age: 23
+Height: 5.600000
+Birthday: 7/3/1987
+
+Name: Greg
+Age: 22
+Height: 6.200000
+Birthday: 4/15/1989
+
+Name: Matt
+Age: 24
+Height: 6.500000
+Birthday: 6/5/1986
+
+Name: Bob
+Age: 50
+Height: 8.000000
+Birthday: 3/23/1900
+
+Name: AJ
+Age: 99
+Height: 88.000000
+Birthday: 1/1/1919
+
+
+--> Clearing database
+No people in records!
+
+--> Adding new record to database
+New Record:
+Name:
+AJ 99 88 1/1/1919
+Age:
+Height:
+Birthday in MM/DD/YYYY:
+
+Name: AJ
+Age: 99
+Height: 88.000000
+Birthday: 1/1/1919
+
+
+Process finished with exit code 0
