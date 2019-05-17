@@ -7,55 +7,28 @@
 %}
 
 digit [0-9]
-int_number [+-]?{digit}+
-real_number [+-]?{digit}+\.{digit}+
+number {digit}+(\.{digit}+)?
 func "neg"|"abs"|"exp"|"sqrt"|"add"|"sub"|"mult"|"div"|"remainder"|"log"|"pow"|"max"|"min"|"exp2"|"cbrt"|"hypot"|"print"
 letter [a-zA-Z]
 symbol {letter}+
-type "integer"|"real"
 
 %%
 
-{real_number} {
+{number} {
     yylval.dval = strtod(yytext, NULL);
-    fprintf(stderr, "lex: REAL_NUMBER dval = %lf\n", yylval.dval);
-    return REAL_NUMBER;
+    fprintf(stderr, "lex: NUMBER dval = %lf\n", yylval.dval);
+    return NUMBER;
     }
 
-{int_number} {
-    yylval.dval = strtod(yytext, NULL);
-    fprintf(stderr, "lex: INT_NUMBER dval = %lf\n", yylval.dval);
-    return INT_NUMBER;
-    }
-
-"quit"|"exit"|"QQ"|"/ff" {
+"quit" {
     return QUIT;
     }
 
-"let" {
-    fprintf(stderr, "lex: LET\n");
-    return LET;
-    }
-
 {func} {
-    yylval.sval = (char *) malloc(strlen(yytext)+1);
+    yylval.sval = (char *) malloc(strlen(yytext)*sizeof(char));
     strcpy(yylval.sval, yytext);
     fprintf(stderr, "lex: FUNC sval = %s\n", yylval.sval);
     return FUNC;
-    }
-
-{type} {
-    yylval.sval = (char *) malloc(strlen(yytext)+1);
-    strcpy(yylval.sval, yytext);
-    fprintf(stderr, "lex: TYPE sval = %s\n", yylval.sval);
-    return TYPE;
-    }
-
-{symbol} {
-    yylval.sval = (char *) malloc(strlen(yytext)+1);
-    strcpy(yylval.sval, yytext);
-    fprintf(stderr, "lex: SYMBOL sval = %s\n", yylval.sval);
-    return SYMBOL;
     }
 
 "(" {
@@ -74,7 +47,7 @@ type "integer"|"real"
     return EOL;
     }
 
-[ \t] {}; /* skip whitespace */
+[ |\t] ; /* skip whitespace */
 
 . { // anything else
     printf("ERROR: invalid character: >>%s<<\n", yytext);
@@ -87,7 +60,7 @@ type "integer"|"real"
  */
 int main(void) {
 
-//   freopen("/dev/null", "w", stderr); // except for this line that can be uncommented to throw away debug printouts
+    //   freopen("/dev/null", "w", stderr); // except for this line that can be uncommented to throw away debug printouts
 
     char *s_expr_str = NULL;
     size_t s_expr_str_len = 0;

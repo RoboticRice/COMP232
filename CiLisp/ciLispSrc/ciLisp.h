@@ -1,3 +1,10 @@
+/*
+ * ciLisp Project
+ * RoboticRice
+ * Task 1
+ * Completed: 05/01/2019
+ */
+
 #ifndef __cilisp_h_
 #define __cilisp_h_
 
@@ -9,29 +16,6 @@
 #include <stdbool.h>
 
 #include "ciLispParser.h"
-
-/* unusual mallocError from ciLisp project files
- *
-(mult -6 2)-12.000000
-lex: LPAREN
-> lex: FUNC sval = mult
-lex: NUMBER dval = -6.000000
-yacc: s_expr ::= NUMBER
-lex: NUMBER dval = 2.000000
-yacc: s_expr ::= NUMBER
-lex: RPAREN
-yacc: s_expr ::= LPAREN FUNC expr expr RPAREN
-lex: EOL
-yacc: program ::= s_expr EOL
-
-(mult -6 2)lex: LPAREN
-cilisp(3153,0x10568b5c0) malloc: Incorrect checksum for freed object 0x7f8e80d000b8: probably modified after being freed.
-Corrupt value: 0x0
-cilisp(3153,0x10568b5c0) malloc: *** set a breakpoint in malloc_error_break to debug
-
-Process finished with exit code 6
- *
- */
 
 int yyparse(void);
 
@@ -53,93 +37,49 @@ typedef enum oper { // must be in sync with funcs in resolveFunc()
     POW_OPER, // 10
     MAX_OPER, // 11
     MIN_OPER, // 12
-    EXP2_OPER, // 13
-    CBRT_OPER, // 14
-    HYPOT_OPER, // 15
-    PRINT_OPER, //16
-    //TODO TASK 6:
-    RAND_OPER, //17
-    READ_OPER, //18
-    EQUAL_OPER, //19
-    SMALL_OPER, //20
-    LARGE_OPER, //21
+//    EXP2_OPER, // 13
+//    CBRT_OPER, // 14
+//    HYPOT_OPER, // 15
+//    PRINT_OPER, //16
+//    //TODO TASK 6:
+//    RAND_OPER, //17
+//    READ_OPER, //18
+//    EQUAL_OPER, //19
+//    SMALL_OPER, //20
+//    LARGE_OPER, //21
     CUSTOM_FUNC=255
 } OPER_TYPE;
 
 OPER_TYPE resolveFunc(char *);
 
 typedef enum {
-    NUM_TYPE,
-    FUNC_TYPE,
-    SYMBOL_TYPE //, RETURN_TYPE
+    NUM_TYPE, FUNC_TYPE
 } AST_NODE_TYPE;
 
-typedef enum {
-    NAN_TYPE = -1,
-    REAL_TYPE,  //0
-    INT_TYPE    //1
-}DATA_TYPE;
-
 typedef struct {
-    DATA_TYPE type;
-    double val;
-}RETURN_VALUE;
-
-typedef struct {
-    //double value; //removed for part 3
-    RETURN_VALUE retVal;
+    double value;
 } NUMBER_AST_NODE;
 
 typedef struct {
     char *name;
-    struct ast_node *opList;
-    //struct ast_node *op1;
-    //struct ast_node *op2;
+    struct ast_node *op1;
+    struct ast_node *op2;
 } FUNCTION_AST_NODE;
-
-typedef struct {
-    char *name;
-} SYMBOL_AST_NODE;
-
-typedef struct symbol_table_node{
-    char *ident;
-    struct ast_node *val;
-    struct symbol_table_node *next;
-}SYMBOL_TABLE_NODE;
 
 typedef struct ast_node {
     AST_NODE_TYPE type;
-    SYMBOL_TABLE_NODE *symbolTable; //the local most scope of all defined variables
-    struct ast_node *parent; //the next more global scope from current local scope
     union {
         NUMBER_AST_NODE number;
         FUNCTION_AST_NODE function;
-        //CON_AST_NODE condition;//TODO PART 6
-        SYMBOL_AST_NODE symbol;
     } data;
-    struct ast_node *next;
 } AST_NODE;
 
-AST_NODE *number(double value, DATA_TYPE dtype);
+AST_NODE *number(double value);
 
-AST_NODE *function(char *funcName, AST_NODE *opList);
-
-AST_NODE *setSymbolTable(SYMBOL_TABLE_NODE *symbolTable, AST_NODE *s_expr);
-
-AST_NODE *symbol(char *name);
-
-SYMBOL_TABLE_NODE *createSymbol(char *name, AST_NODE *val, DATA_TYPE dtype);
-
-SYMBOL_TABLE_NODE *addSymbolToList(SYMBOL_TABLE_NODE *symbolTable, SYMBOL_TABLE_NODE *newSymbol);
-
-SYMBOL_TABLE_NODE *findSymbol(SYMBOL_TABLE_NODE *symbolTable, SYMBOL_TABLE_NODE *symbol);
-
-SYMBOL_TABLE_NODE *resolveSymbol(char *name, AST_NODE *node);
+AST_NODE *function(char *funcName, AST_NODE *op1, AST_NODE *op2);
 
 void freeNode(AST_NODE *p);
 
-void freeTree(AST_NODE *p);
-
-RETURN_VALUE eval(AST_NODE *ast);
+double eval(AST_NODE *ast);
 
 #endif
