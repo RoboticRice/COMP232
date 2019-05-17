@@ -1,0 +1,187 @@
+/Users/***/Desktop/Lab6Parser/cmake-build-debug/parser ../input.txt
+Done parsing...
+=> START program
+=> START statement
+=> START assignStmt
+=> START ident
+<Ident> firstvar
+=> END ident
+=> START expr
+=> START term
+=> START factor
+=> START number
+<Number> 1.000000
+=> END number
+=> END factor
+=> END term
+=> END expr
+=> END assignStmt
+=> END statement
+=> START program
+=> START statement
+=> START assignStmt
+=> START ident
+<Ident> secondvar
+=> END ident
+=> START expr
+=> START term
+=> START factor
+=> START number
+<Number> 2.000000
+=> END number
+=> END factor
+=> END term
+=> END expr
+=> END assignStmt
+=> END statement
+=> START program
+=> START statement
+=> START repeatStmt
+=> START expr
+=> START term
+=> START factor
+=> START number
+<Number> 10.000000
+=> END number
+=> END factor
+=> END term
+=> END expr
+=> START statement
+=> START assignStmt
+=> START ident
+<Ident> thirdvar
+=> END ident
+=> START expr
+=> START term
+=> START factor
+=> START number
+<Number> 2.000000
+=> END number
+=> END factor
+=> START expr
+=> START term
+=> START factor
+=> START expr
+=> START term
+=> START factor
+=> START ident
+<Ident> firstvar
+=> END ident
+=> END factor
+=> START expr
+=> START term
+=> START factor
+=> START ident
+<Ident> secondvar
+=> END ident
+=> END factor
+=> END term
+=> END expr
+<%>
+=> END term
+=> END expr
+=> END factor
+=> START expr
+=> START term
+=> START factor
+=> START expr
+=> START term
+=> START factor
+=> START ident
+<Ident> firstvar
+=> END ident
+=> END factor
+=> END term
+=> START expr
+=> START term
+=> START factor
+=> START number
+<Number> 2.000000
+=> END number
+=> END factor
+=> END term
+=> END expr
+<+>
+=> END expr
+=> END factor
+=> END term
+=> END expr
+</>
+=> END term
+=> END expr
+<*>
+=> END term
+=> END expr
+=> END assignStmt
+=> END statement
+=> END repeatStmt
+=> END statement
+=> START program
+=> START statement
+=> START repeatStmt
+=> START expr
+=> START term
+=> START factor
+=> START ident
+<Ident> firstvar
+=> END ident
+=> END factor
+=> END term
+=> START expr
+=> START term
+=> START factor
+=> START number
+<Number> 2.000000
+=> END number
+=> END factor
+=> START expr
+=> START term
+=> START factor
+=> START ident
+<Ident> secondvar
+=> END ident
+=> END factor
+=> END term
+=> END expr
+<*>
+=> END term
+=> END expr
+<+>
+=> END expr
+=> START statement
+=> START repeatStmt
+=> START expr
+=> START term
+=> START factor
+=> START ident
+<Ident> thirdvar
+=> END ident
+=> END factor
+=> END term
+=> END expr
+=> START statement
+=> START printStmt
+=> START expr
+=> START term
+=> START factor
+<->
+=> START factor
+=> START ident
+<Ident> firstvar
+=> END ident
+=> END factor
+=> END factor
+=> END term
+=> END expr
+=> END printStmt
+=> END statement
+=> END repeatStmt
+=> END statement
+=> END repeatStmt
+=> END statement
+=> END program
+=> END program
+=> END program
+=> END program
+
+Process finished with exit code 0

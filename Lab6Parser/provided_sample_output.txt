@@ -1,0 +1,186 @@
+Done parsing...
+=> START program
+=> START statement
+=> START assignment
+=> START identifier
+<id> firstvar
+=> END identifier
+=> START expression
+=> START term
+=> START factor
+=> START number
+<number> 1.000000
+=> END number
+=> END factor
+=> END term
+=> END expression
+=> END assignment
+=> END statement
+=> START program
+=> START statement
+=> START assignment
+=> START identifier
+<id> secondvar
+=> END identifier
+=> START expression
+=> START term
+=> START factor
+=> START number
+<number> 2.000000
+=> END number
+=> END factor
+=> END term
+=> END expression
+=> END assignment
+=> END statement
+=> START program
+=> START statement
+=> START repeat
+=> START expression
+=> START term
+=> START factor
+=> START number
+<number> 10.000000
+=> END number
+=> END factor
+=> END term
+=> END expression
+=> START statement
+=> START assignment
+=> START identifier
+<id> thirdvar
+=> END identifier
+=> START expression
+=> START term
+=> START factor
+=> START number
+<number> 2.000000
+=> END number
+=> END factor
+<times>
+=> START expression
+=> START term
+=> START factor
+=> START expression
+=> START term
+=> START factor
+=> START identifier
+<id> firstvar
+=> END identifier
+=> END factor
+<modulus>
+=> START expression
+=> START term
+=> START factor
+=> START identifier
+<id> secondvar
+=> END identifier
+=> END factor
+=> END term
+=> END expression
+=> END term
+=> END expression
+=> END factor
+<divide>
+=> START expression
+=> START term
+=> START factor
+=> START expression
+=> START term
+=> START factor
+=> START identifier
+<id> firstvar
+=> END identifier
+=> END factor
+=> END term
+<plus>
+=> START expression
+=> START term
+=> START factor
+=> START number
+<number> 2.000000
+=> END number
+=> END factor
+=> END term
+=> END expression
+=> END expression
+=> END factor
+=> END term
+=> END expression
+=> END term
+=> END expression
+=> END term
+=> END expression
+=> END assignment
+=> END statement
+=> END repeat
+=> END statement
+=> START program
+=> START statement
+=> START repeat
+=> START expression
+=> START term
+=> START factor
+=> START identifier
+<id> firstvar
+=> END identifier
+=> END factor
+=> END term
+<plus>
+=> START expression
+=> START term
+=> START factor
+=> START number
+<number> 2.000000
+=> END number
+=> END factor
+<times>
+=> START expression
+=> START term
+=> START factor
+=> START identifier
+<id> secondvar
+=> END identifier
+=> END factor
+=> END term
+=> END expression
+=> END term
+=> END expression
+=> END expression
+=> START statement
+=> START repeat
+=> START expression
+=> START term
+=> START factor
+=> START identifier
+<id> thirdvar
+=> END identifier
+=> END factor
+=> END term
+=> END expression
+=> START statement
+=> START print
+=> START expression
+=> START term
+=> START factor
+<minus>
+=> START factor
+=> START identifier
+<id> firstvar
+=> END identifier
+=> END factor
+=> END factor
+=> END term
+=> END expression
+=> END print
+=> END statement
+=> END repeat
+=> END statement
+=> END repeat
+=> END statement
+=> START program
+=> END program
+=> END program
+=> END program
+=> END program
+=> END program
