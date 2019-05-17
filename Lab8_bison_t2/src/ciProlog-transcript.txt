@@ -1,0 +1,45 @@
+?- assert('It rains')
+=> TRUE
+
+?- 'It rains'
+=> TRUE
+
+?- assert('It is cold')
+=> TRUE
+
+?- 'It is cold'
+=> TRUE
+
+?- 'It rains' AND 'It is cold'
+=> TRUE
+
+?- retract('It is sunny')
+=> FALSE
+
+?- 'It rains' OR 'It is sunny'
+=> TRUE
+
+?- NOT ('It rains' OR 'It is cold')
+=> FALSE
+
+?- 'It rains' AND 'It is sunny'
+=> FALSE
+
+?- NOT ('It rains' AND 'It is sunny')
+=> TRUE
+
+?- retract('It rains')
+=> TRUE
+
+?- 'It rains'
+=> FALSE
+
+?- 'It rains' OR 'It is cold'
+=> TRUE
+
+?- 'It rains' AND 'It is cold'
+=> FALSE
+
+?- halt
+
+

@@ -1,0 +1,16 @@
+assert('It rains')
+'It rains'
+assert('It is cold')
+'It is cold'
+'It rains' AND 'It is cold'
+retract('It is sunny')
+'It rains' OR 'It is sunny'
+NOT ('It rains' OR 'It is cold')
+'It rains' AND 'It is sunny'
+NOT ('It rains' AND 'It is sunny')
+retract('It rains')
+'It rains'
+'It is cold'
+'It rains' OR 'It is cold'
+'It rains' AND 'It is cold'
+halt

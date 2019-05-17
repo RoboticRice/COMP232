@@ -1,0 +1,64 @@
+/Users/***/Desktop/Lab8-prt1&2/Lab8_bison_t2/cmake-build-debug
+
+?- assert('I am God')
+=> TRUE
+
+?- 'I am God'
+=> TRUE
+
+?- retract('I am God')
+=> TRUE
+
+?- 'I am God'
+=> FALSE
+
+?- assert('A')
+=> TRUE
+
+?- assert('B')
+=> TRUE
+
+?- assert('C')
+=> TRUE
+
+?- 'A' OR 'B' AND 'D'
+=> TRUE
+
+?- 'A' AND 'D' OR 'C'
+=> TRUE
+
+?- 'A' AND 'D"
+
+?- 'A' AND 'D'
+=> FALSE
+
+?- retract('B')
+=> TRUE
+
+?- 'B'
+=> FALSE
+
+?- 'A'
+=> TRUE
+
+?- 'C'
+=> TRUE
+
+?- NOT'A'
+=> FALSE
+
+?- not('A')
+=> FALSE
+
+?- not('B')
+=> TRUE
+
+?- assert('A')
+=> FALSE
+
+?- retract('B')
+=> FALSE
+
+?- halt
+
+Process finished with exit code 0
