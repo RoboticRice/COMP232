@@ -1,0 +1,5 @@
+%token EOL
+
+%%
+
+program: EOL

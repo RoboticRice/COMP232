@@ -1,0 +1,2 @@
+{<keyword> "while"} {<lparen> "("}{<number> "0.4"}{<rparen> ")"} {<identifier> "abc_1_2"} {<assignment> "="} {<identifier> "agd"} {<plus> "+"} {<number> "1"}{<semicolon> ";"}
+{<keyword> "if"} {<lparen> "("}{<identifier> "condition"}{<rparen> ")"} { {<keyword> "print"} {<identifier> "hello"} }{<semicolon> ";"}

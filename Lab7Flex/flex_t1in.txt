@@ -1,0 +1,5 @@
+while (0.4) do abc_1_2 = agd + 1;
+if (condition) then print hello;
+teXEAt = test- 5;
+hsjdkf_hdsj12__1 = bleh / 5 % 25 *2;
+what = about - -5;
