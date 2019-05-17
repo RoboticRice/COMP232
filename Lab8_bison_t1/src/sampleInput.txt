@@ -1,0 +1,44 @@
+/Users/***/Desktop/Lab8-prt1&2/Lab8_bison_t1/cmake-build-debug/calc
+
+> (add (exp (sub 3.5 (sqrt 15))) (log (remainder (pow 3 (sqrt 20)) 5.2)))
+0.545349
+
+> (add .25 5)
+ERROR: invalid character: >>.<<
+30.000000
+
+> (pow 5)
+nan
+
+> (pow 5 2)
+25.000000
+
+> (log 5 1)
+nan
+
+> (log 25 5)
+2.000000
+
+> (log -5)
+nan
+
+> (log (abs -5))
+1.609438
+
+> (abs (sub 5 100))
+95.000000
+
+> (sub 5 100)
+-95.000000
+
+> exit
+ERROR: invalid character: >>e<<
+ERROR: invalid character: >>x<<
+ERROR: invalid character: >>i<<
+ERROR: invalid character: >>t<<
+
+ERROR: syntax error
+
+> quit
+
+Process finished with exit code 0
