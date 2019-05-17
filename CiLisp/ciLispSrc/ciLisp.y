@@ -11,7 +11,7 @@
 
 %token <sval> FUNC SYMBOL TYPE
 %token <dval> REAL_NUMBER INT_NUMBER
-%token LPAREN RPAREN EOL QUIT LET
+%token LPAREN RPAREN EOL QUIT LET COND
 
 %type <astNode> s_expr f_expr s_expr_list
 %type <symbolNode> let_elem let_section let_list
@@ -44,6 +44,9 @@ s_expr:
 	}
 	| LPAREN let_section s_expr RPAREN {
 		$$ = setSymbolTable($2, $3);
+	}
+	| LPAREN COND s_expr s_expr s_expr RPAREN {
+	    $$ = setConditions($3, $4, $5);
 	}
 	| QUIT {
 		fprintf(stderr, "yacc: s_expr ::= QUIT\n");

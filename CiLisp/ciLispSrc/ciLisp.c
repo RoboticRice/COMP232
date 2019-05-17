@@ -1,7 +1,7 @@
 /*
  * ciLisp Project
  * RoboticRice
- * Task 5
+ * Task 6
  * In-Progress: 05/06/2019
  */
 
@@ -34,12 +34,11 @@ char *func[] = {"neg",
                 "cbrt",
                 "hypot",
                 "print",
-//        //TODO TASK 6:
-//                "rand", //generate a random double, by any means
-//                "read", //scanf from user to get value
-//                "equal", //return T/F (0 or 1)
-//                "smaller", //return T/F (0 or 1)
-//                "larger", //return T/F (0 or 1)
+                "rand", //generate a random double, by any means
+                "read", //scanf from user to get value
+                "equal", //return T/F (0 or 1)
+                "smaller", //return T/F (0 or 1)
+                "larger", //return T/F (0 or 1)
                 ""};
 
 OPER_TYPE resolveFunc(char *funcName) {
@@ -133,6 +132,23 @@ AST_NODE *setSymbolTable(SYMBOL_TABLE_NODE *symbolTable, AST_NODE *s_expr) {
     return s_expr;
 }
 
+AST_NODE *setConditions(AST_NODE *condition, AST_NODE *nonZero, AST_NODE *zero) {
+    AST_NODE *p;
+    size_t nodeSize;
+
+    //allocate memory for an AST_NODE storing a SYMBOL_AST_NODE
+    nodeSize = sizeof(AST_NODE);
+    if ((p = calloc(1, nodeSize)) == NULL)
+        yyerror("out of memory");
+
+    p->type = CONDIT_TYPE;
+    p->data.condition.cond = condition;
+    p->data.condition.nonzero = nonZero;
+    p->data.condition.zero = zero;
+
+    return p;
+}
+
 AST_NODE *symbol(char *name) {
     AST_NODE *p;
     size_t nodeSize;
@@ -177,7 +193,7 @@ SYMBOL_TABLE_NODE *createSymbol(char *name, AST_NODE *val, DATA_TYPE dtype) {
         fprintf(stderr, "WARNING: precision loss in the assignment for variable %s\n", name);
     }
 
-    //TODO: Now that I've eval'd the tree with root *val, I should free this tree, right?
+    freeNode(val); //This frees the whole tree, now that it's not needed
 
     return p;
 }
@@ -298,6 +314,11 @@ RETURN_VALUE eval(AST_NODE *p) {
         }
         case NUM_TYPE:
             return p->data.number.retVal;
+        case CONDIT_TYPE:
+            if (eval(p->data.condition.cond).val != 0) //AKA: If condition is NOT false
+                return eval(p->data.condition.nonzero);
+            else
+                return eval(p->data.condition.zero);
         case FUNC_TYPE:
             if (p->data.function.opList != NULL)
             {
@@ -323,13 +344,15 @@ RETURN_VALUE eval(AST_NODE *p) {
                     case MAX_OPER:
                     case MIN_OPER:
                     case HYPOT_OPER:
+                    case EQUAL_OPER:
+                    case SMALL_OPER:
+                    case LARGE_OPER:
                         //all these REQUIRE EXACTLY 2 parameters!
                         if (p->data.function.opList->next != NULL)
                             if (p->data.function.opList->next->next != NULL)
                                 yyerror("More parameters passed than required, ignoring extra parameters!");
                     case ADD_OPER:
                     case MULT_OPER:
-                    case PRINT_OPER:
                         //all these require 2 OR MORE parameters
                         if (p->data.function.opList->next != NULL)
                             op2Val = eval(p->data.function.opList->next);
@@ -450,12 +473,65 @@ RETURN_VALUE eval(AST_NODE *p) {
                         printf("\n");
                         break;
                     }
+                    case RAND_OPER:
+                        yyerror("More parameters passed than required, ignoring extra parameters!");
+                        free(p->data.function.opList);
+                        p->data.function.opList = NULL;
+                        eval(p); //this sends the function call to the if statement below
+                        break;
+                    case READ_OPER:
+                        yyerror("More parameters passed than required, ignoring extra parameters!");
+                        free(p->data.function.opList);
+                        p->data.function.opList = NULL;
+                        eval(p); //this sends the function call to the if statement below
+                        break;
+                    case EQUAL_OPER:
+                        if (retVal.val == op2Val.val)
+                            retVal.val = 1;
+                        else
+                            retVal.val = 0;
+                        retVal.type = INT_TYPE;
+                    case SMALL_OPER:
+                        if (retVal.val < op2Val.val)
+                            retVal.val = 1;
+                        else
+                            retVal.val = 0;
+                        retVal.type = INT_TYPE;
+                    case LARGE_OPER:
+                        if (retVal.val > op2Val.val)
+                            retVal.val = 1;
+                        else
+                            retVal.val = 0;
+                        retVal.type = INT_TYPE;
                     default: //CUSTOM_FUNC - not used?
                         break;
                 } //end switch (function.name)
             } //end if (opList != NULL)
             else
-                yyerror("0 parameters provided, not enough to complete function!"); //the function will then return NAN
+            {
+                switch (resolveFunc(p->data.function.name))
+                {
+                    case READ_OPER:
+                        //Assume proper input
+                        printf("read := ");
+                        fflush(stdout);
+                        char inputBuffer[256];
+                        scanf("%s", inputBuffer);
+                        retVal.val = strtod(inputBuffer, NULL);
+                        char *pPosition = strchr(inputBuffer, '.');
+                        if (pPosition == NULL)
+                            retVal.type = INT_TYPE;
+                        else
+                            retVal.type = REAL_TYPE;
+                        break;
+                    case RAND_OPER:
+                        retVal.val = (double) rand(); //this is the same random sequence of numbers each run
+                        retVal.type = INT_TYPE;
+                        break;
+                    default:
+                        yyerror("0 parameters provided, not enough to complete function!"); //the function will then return NAN
+                }
+            }
     } //end switch (p->type)
 
     if (retVal.val == NAN) //this may happen as a result of a built-in function, so just double checking that the correct TYPE is assigned

@@ -1,7 +1,7 @@
 /*
  * ciLisp Project
  * RoboticRice
- * Task 5
+ * Task 6
  * In-Progress: 05/06/2019
  */
 
@@ -41,12 +41,11 @@ typedef enum oper { // must be in sync with funcs in resolveFunc()
     CBRT_OPER, // 14
     HYPOT_OPER, // 15
     PRINT_OPER, //16
-//    //TODO TASK 6:
-//    RAND_OPER, //17
-//    READ_OPER, //18
-//    EQUAL_OPER, //19
-//    SMALL_OPER, //20
-//    LARGE_OPER, //21
+    RAND_OPER, //17
+    READ_OPER, //18
+    EQUAL_OPER, //19
+    SMALL_OPER, //20
+    LARGE_OPER, //21
     CUSTOM_FUNC=255
 } OPER_TYPE;
 
@@ -55,7 +54,8 @@ OPER_TYPE resolveFunc(char *);
 typedef enum {
     NUM_TYPE, //0
     FUNC_TYPE, //1
-    SYMBOL_TYPE //2
+    SYMBOL_TYPE, //2
+    CONDIT_TYPE //3
 } AST_NODE_TYPE;
 
 typedef struct symbol_table_node {
@@ -87,6 +87,12 @@ typedef struct {
     struct ast_node *opList;
 } FUNCTION_AST_NODE;
 
+typedef struct {
+    struct ast_node *cond;
+    struct ast_node *zero;
+    struct ast_node *nonzero;
+} COND_AST_NODE;
+
 typedef struct symbol_ast_node {
     char *name;
 } SYMBOL_AST_NODE;
@@ -98,6 +104,7 @@ typedef struct ast_node {
     union {
         NUMBER_AST_NODE number;
         FUNCTION_AST_NODE function;
+        COND_AST_NODE condition;
         SYMBOL_AST_NODE symbol;
     } data;
     struct ast_node *next; //used for the linked list of parameters passed
@@ -108,6 +115,8 @@ AST_NODE *number(double value, DATA_TYPE dtype);
 AST_NODE *function(char *funcName, AST_NODE *opList);
 
 AST_NODE *setSymbolTable(SYMBOL_TABLE_NODE *symbolTable, AST_NODE *s_expr);
+
+AST_NODE *setConditions(AST_NODE *condition, AST_NODE *nonZero, AST_NODE *zero);
 
 AST_NODE *symbol(char *name);
 
