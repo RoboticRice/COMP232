@@ -2,8 +2,10 @@
  * ciLisp Project
  * RoboticRice
  * Task 6
- * In-Progress: 05/06/2019
+ * In-Progress: 05/08/2019
  */
+
+ ///Extra Credit (10pts): Add string functionality after Task 8
 
 #include "ciLisp.h"
 
@@ -140,6 +142,10 @@ AST_NODE *setConditions(AST_NODE *condition, AST_NODE *nonZero, AST_NODE *zero) 
     nodeSize = sizeof(AST_NODE);
     if ((p = calloc(1, nodeSize)) == NULL)
         yyerror("out of memory");
+
+    condition->parent = p;
+    nonZero->parent = p;
+    zero->parent = p;
 
     p->type = CONDIT_TYPE;
     p->data.condition.cond = condition;
@@ -301,7 +307,7 @@ RETURN_VALUE eval(AST_NODE *p) {
     op2Val.val = NAN;
     op2Val.type = NAN_TYPE;
 
-    //+5points extra credit for implementing: square root, take second input as input, make a tailor series approximation up to that degree
+    ///+5points extra credit for implementing: square root, take second input as input, make a tailor series approximation up to that degree
 
     switch (p->type) {
         case SYMBOL_TYPE:
@@ -491,18 +497,21 @@ RETURN_VALUE eval(AST_NODE *p) {
                         else
                             retVal.val = 0;
                         retVal.type = INT_TYPE;
+                        break;
                     case SMALL_OPER:
                         if (retVal.val < op2Val.val)
                             retVal.val = 1;
                         else
                             retVal.val = 0;
                         retVal.type = INT_TYPE;
+                        break;
                     case LARGE_OPER:
                         if (retVal.val > op2Val.val)
                             retVal.val = 1;
                         else
                             retVal.val = 0;
                         retVal.type = INT_TYPE;
+                        break;
                     default: //CUSTOM_FUNC - not used?
                         break;
                 } //end switch (function.name)
@@ -525,6 +534,7 @@ RETURN_VALUE eval(AST_NODE *p) {
                             retVal.type = REAL_TYPE;
                         break;
                     case RAND_OPER:
+                        ///Design Choice:
                         retVal.val = (double) rand(); //this is the same random sequence of numbers each run
                         retVal.type = INT_TYPE;
                         break;
