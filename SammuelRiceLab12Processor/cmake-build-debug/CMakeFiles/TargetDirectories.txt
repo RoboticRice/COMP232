@@ -1,3 +1,0 @@
-/Users/sammuel.rice139/Desktop/comp232/SammuelRiceLab12Processor/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/sammuel.rice139/Desktop/comp232/SammuelRiceLab12Processor/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/sammuel.rice139/Desktop/comp232/SammuelRiceLab12Processor/cmake-build-debug/CMakeFiles/processor.dir
