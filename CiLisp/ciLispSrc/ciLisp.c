@@ -1,7 +1,7 @@
 /*
  * ciLisp Project
  * RoboticRice
- * Task 3
+ * Task 4
  * In-Progress: 05/06/2019
  */
 
@@ -33,7 +33,7 @@ char *func[] = {"neg",
                 "exp2",
                 "cbrt",
                 "hypot",
-//                "print",
+                "print",
 //        //TODO TASK 6:
 //                "rand", //generate a random double, by any means
 //                "read", //scanf from user to get value
@@ -328,8 +328,11 @@ RETURN_VALUE eval(AST_NODE *p) {
                     retVal.val *= op2Val.val;
                     break;
                 case DIV_OPER:
-                    if (op2Val.val == 0)
+                    if (op2Val.val == 0) {
+                        retVal.type = NAN_TYPE;
+                        retVal.val = NAN;
                         break; //returns NAN
+                    }
                     retVal.val = retVal.val / op2Val.val;
                     break;
                 case REMAINDER_OPER:
@@ -362,12 +365,17 @@ RETURN_VALUE eval(AST_NODE *p) {
                     retVal.val = hypot(retVal.val, op2Val.val);
                     retVal.type = REAL_TYPE; ///DESIGN CHOICE: Always return a REAL value
                     break;
-//                case PRINT_OPER:
+                case PRINT_OPER:
+                    if (retVal.type == REAL_TYPE)
+                        printf("=> %.2lf\n", retVal.val); //if type is REAL, then print number with 2 decimal precision
+                    else
+                        printf("=> %.0lf\n", retVal.val); //else, print number without decimal (if NAN, it will print nan just fine)
+                    break;
                 default: //CUSTOM_FUNC - not used?
                     break;
             }
     }
-
+    
     if (retVal.val == NAN) //this may happen as a result of a built-in function, so just double checking that the correct TYPE is assigned
         retVal.type = NAN_TYPE;
 

@@ -1,7 +1,7 @@
 /*
  * ciLisp Project
  * RoboticRice
- * Task 3
+ * Task 4
  * In-Progress: 05/06/2019
  */
 
@@ -40,7 +40,7 @@ typedef enum oper { // must be in sync with funcs in resolveFunc()
     EXP2_OPER, // 13
     CBRT_OPER, // 14
     HYPOT_OPER, // 15
-//    PRINT_OPER, //16
+    PRINT_OPER, //16
 //    //TODO TASK 6:
 //    RAND_OPER, //17
 //    READ_OPER, //18
