@@ -1,11 +1,37 @@
 /*
  * ciLisp Project
  * RoboticRice
- * Task 7
+ * Task 8
  * In-Progress: 05/08/2019
  */
 
- ///Extra Credit (10pts): Add string functionality after Task 8
+/**** CURRENT STATUS ****/
+/// Let it be assumed that anything not listed below (as T0D0 statements) works:
+// TODO: Verify the working results for sample input match expected result (not provided)
+/* TODO: Problem #1
+ * Sample Input:
+ *     ((let (integer a (read)) (real b (read))) (print a b))
+ * read := 1
+ * read := 2
+ * read := 3
+ * => 1 3
+ * 1.000000
+ *
+ * Problem with that line is that the func read is only called twice, so why
+ * am I being prompted three times? And why is it printing the first and third
+ * scanf value I provided, rather than 1 & 2 or 2 & 3?
+ */
+/* TODO: Problem #2
+ * Sample Input:
+ *      ((let (integer a 1)(real b 2))(print a b 3))
+ * > => 1 2 3
+ * 1.000000
+ *
+ * Problem with this line is that the number 2 should be a real, so it should
+ * print as 2.00!
+ */
+//TODO: Extra Credit (5pts) : Implement square root, take second input as input, make a tailor series approximation up to that degree
+//TODO: Extra Credit (10pts): Add string functionality after Task 8
 
 #include "ciLisp.h"
 
@@ -379,8 +405,6 @@ RETURN_VALUE eval(AST_NODE *p) {
     op2Val.val = NAN;
     op2Val.type = NAN_TYPE;
 
-    ///+5points extra credit for implementing: square root, take second input as input, make a tailor series approximation up to that degree
-
     switch (p->type) {
         case SYMBOL_TYPE:
         {
@@ -429,7 +453,7 @@ RETURN_VALUE eval(AST_NODE *p) {
                 symbol = symbol->next; //while going through the symbolTable
             }
             retVal = eval(destFunc);
-            //TODO: POP-OFF stack
+            //TODO: POP-OFF stack - oddly, this only seems to matter for memory saving, and not for program functionality
         }
         break;
         case FUNC_TYPE:
@@ -580,7 +604,7 @@ RETURN_VALUE eval(AST_NODE *p) {
                         AST_NODE *scanner = p->data.function.opList->next;
                         while (scanner != NULL)
                         {
-                            if (scanner->data.number.retVal.type == REAL_TYPE)
+                            if (scanner->data.number.retVal.type == REAL_TYPE) //TODO this doesn't work as we don't know the node is a number!
                                 printf(" %.2lf", eval(scanner).val);
                             else
                                 printf(" %.0lf", eval(scanner).val);
@@ -644,8 +668,8 @@ RETURN_VALUE eval(AST_NODE *p) {
                             retVal.type = REAL_TYPE;
                         break;
                     case RAND_OPER:
-                        ///Design Choice:
-                        retVal.val = (double) rand(); //this is the same random sequence of numbers each run
+                        ///Design Choice: this is the same random sequence of numbers each run, and always integer
+                        retVal.val = (double) rand();
                         retVal.type = INT_TYPE;
                         break;
                     default:
