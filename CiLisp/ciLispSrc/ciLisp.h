@@ -1,8 +1,8 @@
 /*
  * ciLisp Project
  * RoboticRice
- * Task 1
- * Completed: 05/01/2019
+ * Task 2
+ * In-Progress: 05/01/2019
  */
 
 #ifndef __cilisp_h_
@@ -53,8 +53,16 @@ typedef enum oper { // must be in sync with funcs in resolveFunc()
 OPER_TYPE resolveFunc(char *);
 
 typedef enum {
-    NUM_TYPE, FUNC_TYPE
+    NUM_TYPE,
+    FUNC_TYPE,
+    SYMBOL_TYPE
 } AST_NODE_TYPE;
+
+typedef struct symbol_table_node {
+    char *ident;
+    struct ast_node *val;
+    struct symbol_table_node *next;
+} SYMBOL_TABLE_NODE;
 
 typedef struct {
     double value;
@@ -66,17 +74,36 @@ typedef struct {
     struct ast_node *op2;
 } FUNCTION_AST_NODE;
 
+typedef struct symbol_ast_node {
+    char *name;
+} SYMBOL_AST_NODE;
+
 typedef struct ast_node {
     AST_NODE_TYPE type;
+    SYMBOL_TABLE_NODE *symbolTable; //the local most scope of all defined variables
+    struct ast_node *parent; //the next more global scope from current local scope
     union {
         NUMBER_AST_NODE number;
         FUNCTION_AST_NODE function;
+        SYMBOL_AST_NODE symbol;
     } data;
 } AST_NODE;
 
 AST_NODE *number(double value);
 
 AST_NODE *function(char *funcName, AST_NODE *op1, AST_NODE *op2);
+
+AST_NODE *setSymbolTable(SYMBOL_TABLE_NODE *symbolTable, AST_NODE *s_expr);
+
+AST_NODE *symbol(char *name);
+
+SYMBOL_TABLE_NODE *createSymbol(char *name, AST_NODE *val); //TODO later task// DATA_TYPE dtype);
+
+SYMBOL_TABLE_NODE *addSymbolToList(SYMBOL_TABLE_NODE *symbolTable, SYMBOL_TABLE_NODE *newSymbol);
+
+SYMBOL_TABLE_NODE *findSymbol(SYMBOL_TABLE_NODE *symbolTable, SYMBOL_TABLE_NODE *symbol);
+
+SYMBOL_TABLE_NODE *resolveSymbol(char *name, AST_NODE *node);
 
 void freeNode(AST_NODE *p);
 
